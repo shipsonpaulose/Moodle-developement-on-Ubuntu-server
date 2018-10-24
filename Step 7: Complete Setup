@@ -1,0 +1,41 @@
+Note - If you are not comfortable using terminal to create the config.php file that needs to be created when going through the installer, you should temporarily make the webroot writable by doing the following:
+>sudo chmod -R 777 /var/www/html/moodle
+
+After you have ran the installer and you have moodle setup, you NEED to revert permissions so that it is no longer writable using the below command.
+>sudo chmod -R 0755 /var/www/html/moodle
+
+Open your browser and go to http://IP.ADDRESS.OF.SERVER/moodle
+example: http://192.168.142.12/moodle
+
+Follow the prompts:
+
+Change the path for moodledata
+/var/moodledata
+
+Database Type
+Choose: mysqli
+
+Database Settings
+Host server: localhost
+
+Database: moodle
+
+User: moodledude (the user you created when setting up the database)
+
+Password: passwordformoodledude (the password for the user you created)
+
+Tables Prefix: mdl_
+
+Environment Checks
+This will indicate if any elements required to run moodle haven't been installed.
+
+Next next next...
+follow prompts and confirm installation
+
+Create a Site Administrator Account
+Create your moodle user account which will have site administrator permissions.
+
+The password you select has to meet certain security requirements.
+
+Don't Forget: If you made the webroot writable, revert permissions
+>sudo chmod -R 0755 /var/www/html/moodle

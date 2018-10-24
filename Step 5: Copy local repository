@@ -1,0 +1,6 @@
+We have to copy the local repository to /var/www/html
+>sudo cp -R /opt/moodle /var/www/html/
+>sudo mkdir /var/moodledata
+>sudo chown -R www-data /var/moodledata
+>sudo chmod -R 777 /var/moodledata
+>sudo chmod -R 0755 /var/www/html/moodle

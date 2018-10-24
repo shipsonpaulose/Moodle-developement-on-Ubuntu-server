@@ -1,0 +1,16 @@
+Open up Terminal(ctrl+shift+T) and write down the following commands:
+
+Adding the php7 ppa repository:
+
+>sudo add-apt-repository ppa:ondrej/php
+>sudo apt-get update
+>sudo apt-get install apache2 mysql-client mysql-server php7.0 libapache2-mod-php7
+
+Install additional software 
+>sudo apt-get install graphviz aspell ghostscript clamav php7.0-pspell php7.0-curl php7.0-gd php7.0-intl php7.0-mysql php7.0-xml php7.0-xmlrpc php7.0-ldap php7.0-zip php7.0-soap php7.0-mbstring
+
+Restart Apache so that the modules are loaded correctly
+>sudo service apache2 restart
+
+We will be using Git to install/update the Moodle Core Application
+>sudo apt-get install git-core

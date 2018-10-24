@@ -1,0 +1,38 @@
+After installing Moodle you should set the system paths, this will provide better performance VS not setting them. Each entry in Moodle will have it's explanation.
+
+Navigate, on the moodle webpage, to Site Administration > Server > System Paths
+
+Input the following;
+
+Path to Du: /usr/bin/du
+
+Path to Apsell: /usr/bin/aspell
+
+Path to dot: /usr/bin/dot
+
+Save Changes
+
+
+Optional if you do not already have an AntiVirus Solution
+We also installed ClamAV in Step 3 so we need to set the path in Moodle
+
+1st Create the Quarantine Directory
+>sudo mkdir /var/quarantine
+
+Change Ownership
+>sudo chown -R www-data /var/quarantine
+
+Navigate to Site Administration > Plugins > Antivirus plugins > Manage antivirus plugins
+
+Enable ClamAV antivirus
+
+Click on Settings
+
+Set the proper settings
+
+Save changes
+
+In previous Moodle branches: Check "Use ClamAV on uploaded files" ClamAV Path : /usr/bin/clamscan Quarantine Directory : /var/quarantine
+
+Save Changes
+

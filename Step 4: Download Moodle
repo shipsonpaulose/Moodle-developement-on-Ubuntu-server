@@ -1,0 +1,19 @@
+Setup your local repository and download Moodle, We will use /opt for this installation.
+
+Git is what is called a "version control system". By using git it will much easier down the road to update the moodle core application. Within Step 5 there is a little more detail on why we put the moodle core application code in the /opt directory.
+>cd /opt
+
+Download the Moodle Code and Index
+>sudo git clone git://git.moodle.org/moodle.git
+
+Change directory into the downloaded Moodle folder
+>cd moodle
+
+Retrieve a list of each branch available
+>sudo git branch -a
+
+Tell git which branch to track or use
+>sudo git branch --track MOODLE_35_STABLE origin/MOODLE_35_STABLE
+
+Finally, Check out the Moodle version specified
+>sudo git checkout MOODLE_35_STABLE

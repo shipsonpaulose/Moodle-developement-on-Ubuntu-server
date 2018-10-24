@@ -1,0 +1,31 @@
+First we need to change the default storage engine to innodb and change the default file format to Barracuda, this is a new setting compared to previous versions. You also need to set innodb_file_per_table in order for Barracuda to work properly. Ref: https://dev.mysql.com/doc/refman/5.6/en/innodb-compression-usage.html
+
+You should not need to make innodb the default storage engine anymore, the latest version of Moodle will select it automatically during install. It is always a good idea to make it default anyway. You do however need to set the default file format!
+If you chose to use VIM instead please substitute vi for vim
+
+>sudo vi /etc/mysql/mysql.conf.d/mysqld.cnf
+
+Scroll down to the [mysqld] section and under Basic Settings add the following line under the last statement. if you want to add you have to press the "insert" button on your keyboard. this is usually above the "delete" button. this allows you to add some text.
+default_storage_engine = innodb
+innodb_file_per_table = 1
+innodb_file_format = Barracuda
+
+In order to save my.cnf using the editor, press the Esc (Escape) key, type the following in sequence which will save :w then close the editor :q
+:w
+:q
+
+Restart MySQL Server for changes to take affect
+>sudo service mysql restart
+
+Now we need to create the Moodle database and the Moodle MySQL User with the correct permissions
+
+Use the password you created in step 1
+>mysql -u root -p
+>mysql>CREATE DATABASE moodle DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+
+Where it says "moodledude" and "passwordformoodledude" you should change to the username and password of your choosing.
+>mysql>create user 'moodledude'@'localhost' IDENTIFIED BY 'passwordformoodledude';
+>mysql>GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,CREATE TEMPORARY TABLES,DROP,INDEX,ALTER ON moodle.* TO moodledude@localhost IDENTIFIED BY 'passwordformoodledude';
+>mysql>quit;
+
+

@@ -1,0 +1,25 @@
+Installation of Editor
+>You can use vi or vim to edit the files
+  VI or VIM Commands
+  To edit a file press "Insert" Key
+  To finish editing press "Esc" Key
+  To write the file press ":w"
+  To Exit the editor press ":q"
+  You can also write and quit ":wq"
+
+>Or you can use gedit editor
+  File will open in a normal notepad format and you can edit it the same way you edit a word file.
+  
+To install editor:
+>vi
+  sudo apt-get install vi
+
+>vim
+  sudo apt-get install vim
+  
+>gedit
+  sudo apt-get install gedit
+  
+Note: sometimes it is preinstalled, then you can directly start using it to edit the file.
+
+  
